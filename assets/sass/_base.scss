@@ -64,6 +64,21 @@ a {
   }
 }
 
+.header {
+  margin: 0 auto;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  background: $black;
+  height: 48px;
+
+  @media screen and (max-width: 1080px) {
+    height: auto;
+  }
+}
+
 .container {
   margin: 0 auto;
   width: $global-body-width;
@@ -96,10 +111,15 @@ a {
 	height: 100%;
 }
 
-.bg-llight {
-  background-color: #f2f2f5;
-}
-
 .bg-white {
   background-color: #FFF;
+}
+
+.home-title {
+  margin: 0;
+  padding: 0;
+  font-size: 2.5em;
+  font-weight: 400;
+  line-height: 1.2;
+  color: $global-font-color;
 }
