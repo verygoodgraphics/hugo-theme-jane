@@ -6,7 +6,13 @@
   .menu {
     float: right;
     padding-right: 15px;
-    font-family: $global-serif-font-family;
+    margin: 0;
+    height: 48px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 15px;
+    // font-family: $global-serif-font-family;
 
     .active {
       font-weight: 700;
@@ -56,6 +62,7 @@
 
     .menu-item-link {
       font-size: $menu-link-font-size;
+      color: $white;
     }
   }
 }
