@@ -1,20 +1,32 @@
 {{ define "content" }}
 
-<div class="home-title">
-  <!-- VeryGoodGraphics -->
+<div class="home-hero">
+  <div class="home-title">
+    <h1>VGG Blog</h1>
+    {{/*  <p>Welcome to the VGG Blog, your go-to source for all things related to graphic design, web development, and digital marketing. Our team of experts is dedicated to providing you with the latest news, tips, and tutorials to help you stay ahead of the curve in the fast-paced world of digital media. Whether you're a seasoned professional or just starting out, we've got something for everyone. So sit back, relax, and enjoy the ride!</p>  */}}
+  </div>
+  <section id="posts" class="posts featured">
+    {{ $pages := .Pages }}
+    {{ if .IsHome }}
+      {{ $pages = where .Site.RegularPages "Type" "in" site.Params.mainSections }}
+    {{ end }}
+    {{ $paginator := .Paginate $pages }}
+    {{ range first 3 $paginator.Pages }}
+      {{ .Render "summary" }}
+    {{ end }}
+  </section>
 </div>
 
-<section id="posts" class="posts">
-  {{ $pages := .Pages }}
-  {{ if .IsHome }}
-    {{ $pages = where .Site.RegularPages "Type" "in" site.Params.mainSections }}
-  {{ end }}
-  {{ $paginator := .Paginate $pages }}
-  {{ range $paginator.Pages }}
-    {{ .Render "summary" }}
-  {{ end }}
+<section id="all_posts" class="all-posts">
+  <div class="all-posts-title">
+    <h2>Recent Posts</h2>
+  </div>
+  <div class="all-posts-list">
+    {{ range $paginator.Pages }}
+      {{ .Render "simple" }}
+    {{ end }}
+  </div>
 </section>
-
 <!-- pagination -->
 {{ partial "pagination.html" . }}
 

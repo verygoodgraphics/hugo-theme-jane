@@ -59,7 +59,8 @@ $global-lineheight: 1.8 !default;
 $global-font-family: 'Source Sans Pro', 'Helvetica Neue', Arial, sans-serif !default;
 
 // Serif font family of the site.
-$global-serif-font-family: Athelas, STHeiti, Microsoft Yahei, serif !default;
+$global-serif-font-family: 'Source Sans Pro', 'Helvetica Neue', Arial, sans-serif !default;
+// $global-serif-font-family: Athelas, STHeiti, Microsoft Yahei, serif !default;
 
 // Background color of the site.
 $global-background: $light-bg !default;
@@ -80,7 +81,8 @@ $global-headings: (
 $logo-font-size: 20px !default;
 
 // Font family of the logo.
-$logo-font-family: Athelas, STHeiti, Microsoft Yahei, serif !default;
+$logo-font-family: 'Source Sans Pro', 'Helvetica Neue', Arial, sans-serif !default;
+// $logo-font-family: Athelas, STHeiti, Microsoft Yahei, serif !default;
 
 // Margin of menu item.
 $menu-item-margin-left: 10px !default;

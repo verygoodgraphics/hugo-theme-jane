@@ -2,26 +2,103 @@
 // Post
 // ==============================
 
+@supports (display: grid) {
 
+  .featured {
+    &.posts {
+      display: grid;
+      grid-gap: 1.5vw;
+      // min-height: 100vh;
+      padding: 1.5vw;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+  
+    &.posts {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: 50vh 30vh repeat(2, minmax(20vh, 1fr));
+      grid-template-areas:
+        "big   big"
+        "med1   med1"
+        "med2   med2";
+    }
+  
+    @media screen and (min-width: 750px) {
+      &.posts {
+        grid-template-columns: repeat(5, 1fr);
+        grid-template-rows: repeat(2, 25vh);
+        grid-template-areas:
+          "big   big   big   med1   med1"
+          "big   big   big   med2   med2"
+      }
+    }
+  
+    &.posts {
+      .post:nth-child(1)  { grid-area: big; }
+      .post:nth-child(2)  { grid-area: med1; }
+      .post:nth-child(3)  { grid-area: med2; }
+    }
+  }
 
-.posts {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  grid-gap: 1em;
-  // margin: 0 5em 3em;
-  padding: 0 20px;
+}
 
-  .post {
-    margin: 0;
+.featured {
+  &.posts {
+    .post:nth-child(1)  { background-image: linear-gradient(45deg, #cbabfb 0%, #fb7ef6 60%); }
+    .post:nth-child(2)  { background-image: linear-gradient(45deg, #70c1fb 0%, #79ebe0 60%); }
+    .post:nth-child(3)  { background-image: linear-gradient(45deg, #79ebe0 0%, #70c1fb 60%); }
+    
+    .post:nth-child(2),
+    .post:nth-child(3)  { 
+        h1 {
+          font-size: x-large;
+          line-height: normal;
+          margin-bottom: 6px;
+        }
+    
+        p {
+          font-size: medium;
+          line-height: 1.5;
+        }
+      }
   }
 }
 
+
+/* flexbox fallback is the browser does not support display:grid */
+@supports not (display: grid) {
+
+  .featured {
+    &.posts {
+      display: flex;
+      flex-flow: row wrap;
+      min-height: 100vh;
+      padding: 0.75vw;
+
+      .post {
+        min-height: 20vh;
+        margin: 0.75vw;
+      }
+
+      .post:nth-child(1)  { flex: 0 1 calc(100% - 1.5vw); height: 50vh;  }
+      .post:nth-child(2)  { flex: 0 1 calc(100% - 1.5vw); height: 30vh;  }
+      .post:nth-child(3)  { flex: 0 1 calc(100% - 1.5vw); height: 30vh;  }
+
+      @media screen and (min-width: 750px) {
+        .post:nth-child(1)  { flex: 0 1 calc(60% - 1.5vw); }
+        .post:nth-child(2)  { flex: 0 1 calc(40% - 1.5vw); height: 50vh; }
+      }
+    }
+  }
+}
+
+
 .post {
-  padding: 3em 5em;
-  border-radius: 12px;
+  padding: 3em 4em;
+  border-radius: 18px;
   border: 1px solid #e9e9e9;
   box-shadow: 0 4px 5px rgba(0, 0, 0, 0.02);
-  margin: 0 auto 3em;
+  margin: 0 auto;
   max-width: $global-body-width;
   box-sizing: border-box;
 
