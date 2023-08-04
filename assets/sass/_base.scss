@@ -90,9 +90,9 @@ a {
   }
 }
 
-.content-wrapper {
-  padding: 3em 0 1px 0;
-}
+// .content-wrapper {
+//   padding: 3em 0 1px 0;
+// }
 
 // make video fluid:
 // https://css-tricks.com/NetMag/FluidWidthVideo/Article-FluidWidthVideo.php
@@ -115,11 +115,62 @@ a {
   background-color: #FFF;
 }
 
+.home-hero {
+  background-color: $black;
+  padding: 4em 0;
+}
+
 .home-title {
-  margin: 0;
-  padding: 0;
+  padding: 0 0 40px 0;
   font-size: 2.5em;
   font-weight: 400;
   line-height: 1.2;
   color: $global-font-color;
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  // gap: 3em;
+  flex-direction: column;
+  
+  h1 {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin: 0;
+    padding: 0;
+    font-size: 1.6em;
+    font-weight: 700;
+    line-height: 1;
+    color: $global-font-color;
+    flex: none;
+    text-transform: uppercase;
+    color: white;
+  }
+
+  p {
+    margin: 8px 0 0 0;
+    padding: 0;
+    font-size: 0.45em;
+    font-weight: 400;
+    line-height: 1.5;
+    color: $global-font-color;
+    color: white;
+    font-weight: 400;
+    // max-width: 600px;
+  }
+}
+
+.all-posts-title {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.all-posts-list {
+  list-style: none;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 0 40px 0;
+  gap: 3em;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
 }
