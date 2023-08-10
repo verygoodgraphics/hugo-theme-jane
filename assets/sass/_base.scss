@@ -115,9 +115,29 @@ a {
   background-color: #FFF;
 }
 
+.content {
+  box-sizing: border-box;
+}
+
 .home-hero {
-  background-color: $black;
+  background-color: rgba(0, 0, 0, 0.8);
   padding: 4em 0;
+  position: relative;
+  overflow: hidden;
+
+  #videoBG {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
 }
 
 .home-title {
@@ -160,17 +180,4 @@ a {
   }
 }
 
-.all-posts-title {
-  max-width: 1400px;
-  margin: 0 auto;
-}
 
-.all-posts-list {
-  list-style: none;
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 0 0 40px 0;
-  gap: 3em;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-}

@@ -223,7 +223,7 @@ function mapLang(name) {
 
 /* main */
 $(document).ready(function () {
-  backToTop();
+  // backToTop();
   mobileNavbar();
   toc();
   headerAnchor();

@@ -7,6 +7,11 @@
   color: $dark-gray;
   text-align: center;
   font-family: $global-serif-font-family;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 1em;
+  font-size: 0.88em;
 
   .hexo-link,
   .theme-link {
@@ -19,5 +24,12 @@
     .heart {
       font-size: 14px;
     }
+  }
+}
+
+@media screen and (max-width: 899px) {
+  .copyright {
+    flex-direction: column;
+    gap: 0.2em;
   }
 }
