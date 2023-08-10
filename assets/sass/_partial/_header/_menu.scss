@@ -63,6 +63,11 @@
     .menu-item-link {
       font-size: $menu-link-font-size;
       color: $white;
+
+      svg {
+        fill: $white;
+        opacity: 0.5;
+      }
     }
   }
 }

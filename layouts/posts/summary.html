@@ -49,15 +49,17 @@
     <div class="post-summary">
       {{ .Summary }}
     </div>
-    <div class="read-more">
+    {{/*  <div class="read-more">
       <a href="{{ .RelPermalink }}" class="read-more-link">{{ i18n "readmore" }}</a>
-    </div>
+    </div>  */}}
     {{ end }}
   </div>
 
-  <div class="post-mask">
-    <div class="read-more">
-      <a href="{{ .RelPermalink }}" class="read-more-link">{{ i18n "readmore" }}</a>
+  <a href="{{ .RelPermalink }}" class="read-more-link">
+    <div class="post-mask">
+      <div class="read-more">
+        {{ i18n "readmore" }}
+      </div>
     </div>
-  </div>
+  </a>
 </article>

@@ -13,7 +13,7 @@
 
   <!-- utteranc -->
   {{ if .Site.Params.utteranc.enable }}
-    <div class="post bg-white">
+    <div class="bg-white">
       <script src="https://utteranc.es/client.js"
             repo= "{{ .Site.Params.utteranc.repo }}"
             issue-term="{{ .Site.Params.utteranc.issueTerm }}"
@@ -41,7 +41,7 @@
 
   <!-- gitment -->
   {{- if .Site.Params.gitment.owner -}}
-    <div class="post bg-white">
+    <div class="bg-white">
       <div id="comments-gitment"></div>
       {{ if .Site.Params.publicCDN.enable -}}
         {{ .Site.Params.publicCDN.gitmentCSS | safeHTML }}

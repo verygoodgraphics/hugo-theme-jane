@@ -1,6 +1,9 @@
 {{ define "content" }}
 
 <div class="home-hero">
+  <video autoplay muted loop id="videoBG">
+    <source src="/video/bg.mp4" type="video/mp4">
+  </video>
   <div class="home-title">
     <h1>VGG Blog</h1>
     {{/*  <p>Welcome to the VGG Blog, your go-to source for all things related to graphic design, web development, and digital marketing. Our team of experts is dedicated to providing you with the latest news, tips, and tutorials to help you stay ahead of the curve in the fast-paced world of digital media. Whether you're a seasoned professional or just starting out, we've got something for everyone. So sit back, relax, and enjoy the ride!</p>  */}}
@@ -17,7 +20,7 @@
   </section>
 </div>
 
-<section id="all_posts" class="all-posts">
+<div id="all_posts" class="all-posts">
   <div class="all-posts-title">
     <h2>Recent Posts</h2>
   </div>
@@ -26,7 +29,7 @@
       {{ .Render "simple" }}
     {{ end }}
   </div>
-</section>
+</div>
 <!-- pagination -->
 {{ partial "pagination.html" . }}
 

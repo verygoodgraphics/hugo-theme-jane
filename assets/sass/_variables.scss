@@ -9,7 +9,7 @@ $theme-color-config: 'Default';
 
 // Default theme color map
 $theme-color-map: (
-  'Default': #c05b4d #f8f5ec,
+  'Default': #000000 #f8f5ec,
   'Mint Green': #16982B #f5f5f5,
   'Cobalt Blue': #0047AB #f0f2f5,
   'Hot Pink': #FF69B4 #f8f5f5,
@@ -233,7 +233,7 @@ $archive-max-width: 550px !default;
 $archive-name-font-size: 30px !default;
 
 // Font size of the collection title.
-$collection-title-font-size: 28px !default;
+$collection-title-font-size: 24px !default;
 
 // Padding of the archive post.
 $archive-post-padding: 15px 20px 5px 20px !default;
